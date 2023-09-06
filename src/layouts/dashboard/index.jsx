@@ -11,11 +11,9 @@ export default function Admin(props) {
 
   const getActiveNavbar = (routes) => {
     let activeNavbar = false;
-    for (let i = 0; i < routes.length; i++) {
-      if (
-        window.location.href.indexOf(routes[i].layout + routes[i].path) !== -1
-      ) {
-        return routes[i].secondary;
+    for (const element of routes) {
+      if (window.location.href.indexOf(element.layout + element.path) !== -1) {
+        return element.secondary;
       }
     }
     return activeNavbar;
@@ -53,10 +51,7 @@ export default function Admin(props) {
               <Routes>
                 {getRoutes(routes)}
 
-                <Route
-                  path="/"
-                  element={<Navigate to="/home/default" replace />}
-                />
+                <Route path="/" element={<Navigate to="/home" replace />} />
               </Routes>
             </div>
             <div className="p-3">
