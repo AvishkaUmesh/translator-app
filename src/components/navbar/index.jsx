@@ -3,7 +3,7 @@ import { RiMoonFill, RiSunFill } from "react-icons/ri";
 import { Link } from "react-router-dom";
 
 const Navbar = (props) => {
-  const { onOpenSidenav, brandText } = props;
+  const { brandText } = props;
   const [darkmode, setDarkmode] = React.useState(false);
 
   return (
