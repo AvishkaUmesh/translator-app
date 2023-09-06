@@ -1,38 +1,14 @@
-import React from "react";
-import { Routes, Route, Navigate, useLocation } from "react-router-dom";
+import Footer from "components/footer/Footer";
 import Navbar from "components/navbar";
 import Sidebar from "components/sidebar";
-import Footer from "components/footer/Footer";
+import React from "react";
+import { Navigate, Route, Routes } from "react-router-dom";
 import routes from "routes.js";
 
 export default function Admin(props) {
   const { ...rest } = props;
-  const location = useLocation();
   const [open, setOpen] = React.useState(true);
-  const [currentRoute, setCurrentRoute] = React.useState("Main Dashboard");
 
-  React.useEffect(() => {
-    window.addEventListener("resize", () =>
-      window.innerWidth < 1200 ? setOpen(false) : setOpen(true)
-    );
-  }, []);
-  React.useEffect(() => {
-    getActiveRoute(routes);
-  }, [location.pathname]);
-
-  const getActiveRoute = (routes) => {
-    let activeRoute = "Main Dashboard";
-    for (let i = 0; i < routes.length; i++) {
-      if (
-        window.location.href.indexOf(
-          routes[i].layout + "/" + routes[i].path
-        ) !== -1
-      ) {
-        setCurrentRoute(routes[i].name);
-      }
-    }
-    return activeRoute;
-  };
   const getActiveNavbar = (routes) => {
     let activeNavbar = false;
     for (let i = 0; i < routes.length; i++) {
@@ -70,8 +46,6 @@ export default function Admin(props) {
           <div className="h-full">
             <Navbar
               onOpenSidenav={() => setOpen(true)}
-              logoText={"Horizon UI Tailwind React"}
-              brandText={currentRoute}
               secondary={getActiveNavbar(routes)}
               {...rest}
             />
