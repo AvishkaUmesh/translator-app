@@ -5,8 +5,8 @@ import AdminLayout from "layouts/dashboard";
 const App = () => {
   return (
     <Routes>
-      <Route path="admin/*" element={<AdminLayout />} />
-      <Route path="/" element={<Navigate to="/admin" replace />} />
+      <Route path="home/*" element={<AdminLayout />} />
+      <Route path="/" element={<Navigate to="/home" replace />} />
     </Routes>
   );
 };

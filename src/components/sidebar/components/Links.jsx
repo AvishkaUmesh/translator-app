@@ -1,7 +1,6 @@
 /* eslint-disable */
-import React from "react";
-import { Link, useLocation } from "react-router-dom";
 import DashIcon from "components/icons/DashIcon";
+import { Link, useLocation } from "react-router-dom";
 // chakra imports
 
 export function SidebarLinks(props) {
@@ -18,7 +17,7 @@ export function SidebarLinks(props) {
   const createLinks = (routes) => {
     return routes.map((route, index) => {
       if (
-        route.layout === "/admin" ||
+        route.layout === "/home" ||
         route.layout === "/auth" ||
         route.layout === "/rtl"
       ) {
