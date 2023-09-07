@@ -6,7 +6,7 @@ import { MdHome } from "react-icons/md";
 
 const routes = [
   {
-    name: "Main Dashboard",
+    name: "Sinhala to English",
     layout: "/home",
     path: "",
     icon: <MdHome className="h-6 w-6" />,
