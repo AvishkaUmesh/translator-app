@@ -1,5 +1,5 @@
 // Admin Imports
-import MainDashboard from "views/dashboard";
+import MainDashboard from "views/Translate";
 
 // Icon Imports
 import { MdHome } from "react-icons/md";
