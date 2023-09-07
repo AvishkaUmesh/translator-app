@@ -12,7 +12,7 @@ import { useState } from "react";
 import TranslationService from "services/TranslationService";
 import { romanToSinhalaConvert } from "services/romanToSInhalaConvert";
 
-function Dashboard() {
+function TranslatePage() {
   const [sourceLanguage, setSourceLanguage] = useState("singlish");
   const [inputText, setInputText] = useState("");
   const [translatedText, setTranslatedText] = useState("");
@@ -128,4 +128,4 @@ function Dashboard() {
   );
 }
 
-export default Dashboard;
+export default TranslatePage;

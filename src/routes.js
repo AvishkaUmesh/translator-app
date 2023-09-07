@@ -1,5 +1,5 @@
 // Admin Imports
-import MainDashboard from "views/Translate";
+import TranslatePage from "views/Translate";
 
 // Icon Imports
 import { MdHome } from "react-icons/md";
@@ -10,7 +10,7 @@ const routes = [
     layout: "/home",
     path: "",
     icon: <MdHome className="h-6 w-6" />,
-    component: <MainDashboard />,
+    component: <TranslatePage />,
   },
 ];
 export default routes;
