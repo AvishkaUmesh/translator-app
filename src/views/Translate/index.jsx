@@ -97,7 +97,7 @@ function TranslatePage() {
             {sourceLanguage === "singlish" && (
               <div className="mt-2">
                 <Typography variant="body1">
-                  Converted Text (Roman to Sinhala):
+                  Converted Text Sinhala:
                 </Typography>
                 <TextField
                   multiline
