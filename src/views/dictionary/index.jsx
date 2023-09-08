@@ -37,7 +37,7 @@ const DictionaryPage = () => {
   return (
     
     <div className="bg-purple-500 min-h-screen p-4">
-      <h1 className="text-2xl text-white mb-4">Sinhala to English Dictionary</h1>
+      <h1 className="text-2xl text-white mb-4">Sinhala-English Switch Dictionary</h1>
       <div className="bg-white rounded-lg p-4">
         <input
           type="text"
