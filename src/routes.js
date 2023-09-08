@@ -1,5 +1,6 @@
 // Admin Imports
 import TranslatePage from "views/Translate";
+import UnicodeConverter from "views/unicodeConverter"
 
 // Icon Imports
 import { MdHome } from "react-icons/md";
@@ -11,6 +12,13 @@ const routes = [
     path: "",
     icon: <MdHome className="h-6 w-6" />,
     component: <TranslatePage />,
+  },
+  {
+    name: "Unicode Converter",
+    layout: "/home",
+    path: "unicode",
+    icon: <MdHome className="h-6 w-6" />,
+    component: <UnicodeConverter />,
   },
 ];
 export default routes;
