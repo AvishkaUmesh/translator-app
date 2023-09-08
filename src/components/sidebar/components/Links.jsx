@@ -11,10 +11,9 @@ export function SidebarLinks(props) {
 
   // verifies if routeName is the one active (in browser input)
   const activeRoute = (route) => {
-    if (route.layout === "/home" && route.path === "") {
+    if (location.pathname === route.layout + "/" && route.path === "") {
       return true;
-    }
-    if (location.pathname === route.layout + "/" + route.path) {
+    } else if (location.pathname === route.layout + "/" + route.path) {
       return true;
     } else {
       return false;
