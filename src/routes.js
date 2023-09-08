@@ -20,13 +20,7 @@ const routes = [
 
 
 
-  
-  {
-    name: "Unicode Converter",
-    layout: "/home",
-    path: "unicode",
-    icon: <MdHome className="h-6 w-6" />,
-    component: <UnicodeConverter />,
-  },
+
+
 ];
 export default routes;
