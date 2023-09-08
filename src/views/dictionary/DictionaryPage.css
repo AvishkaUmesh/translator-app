@@ -1,0 +1,64 @@
+/* DictionaryPage.css */
+
+/* Container styles */
+.bg-purple-500 {
+    background-color: #580f7d; /* Purple color */
+  }
+  
+  .min-h-screen {
+    min-height: 100vh; /* Minimum height to fill the screen */
+  }
+  
+  /* Header styles */
+  .text-white {
+    color: #ffffff; /* White text color */
+  }
+  
+  /* Card styles for input and button */
+  .bg-white {
+    background-color: #ffffff; /* White background color */
+  }
+  
+  .rounded-lg {
+    border-radius: 0.5rem; /* Rounded corners */
+  }
+  
+  /* Input field styles */
+  .border {
+    border: 1px solid #ccc; /* Gray border */
+  }
+  
+  .p-2 {
+    padding: 0.5rem; /* Padding */
+  }
+  
+  .w-full {
+    width: 100%; /* Full width */
+  }
+  
+  .mb-4 {
+    margin-bottom: 1rem; /* Margin bottom */
+  }
+  
+  /* Button styles */
+  .bg-purple-700 {
+    background-color: #811fbe; /* Darker purple color */
+  }
+  
+  .hover:bg-purple-800:hover {
+    background-color: #580f7d; /* Dark purple color on hover */
+  }
+  
+  .focus\:outline-none:focus {
+    outline: none; /* Remove outline on focus */
+  }
+  
+  /* Result container styles */
+  .mt-4 {
+    margin-top: 1rem; /* Margin top */
+  }
+  
+  .text-gray-800 {
+    color: #333; /* Dark gray text color */
+  }
+  

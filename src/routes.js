@@ -5,6 +5,7 @@ import UnicodeConverter from "views/unicodeConverter"
 
 // Icon Imports
 import { MdHome } from "react-icons/md";
+import DictionaryPage from "views/dictionary";
 
 const routes = [
   {
