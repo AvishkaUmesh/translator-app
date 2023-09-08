@@ -1,5 +1,6 @@
 import FileCopyIcon from "@mui/icons-material/FileCopy";
 import {
+  Alert,
   Button,
   Card,
   Grid,
@@ -7,6 +8,7 @@ import {
   MenuItem,
   Select,
   TextField,
+  Typography,
 } from "@mui/material";
 import { useState } from "react";
 import TranslationService from "services/TranslationService";
@@ -16,6 +18,9 @@ function TranslatePage() {
   const [sourceLanguage, setSourceLanguage] = useState("singlish");
   const [inputText, setInputText] = useState("");
   const [translatedText, setTranslatedText] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const [validationError, setValidationError] = useState(null);
+  const [requestError, setRequestError] = useState(null);
 
   const handleLanguageChange = (event) => {
     setSourceLanguage(event.target.value);
@@ -23,9 +28,20 @@ function TranslatePage() {
 
   const handleInputChange = (event) => {
     setInputText(event.target.value);
+    // Clear validation error message when user starts typing
+    setValidationError(null);
   };
 
   const translateText = async () => {
+    setIsLoading(true);
+    setRequestError(null);
+
+    if (inputText.trim() === "") {
+      setValidationError("Input text cannot be empty.");
+      setIsLoading(false);
+      return;
+    }
+
     let inputPara = inputText;
     if (sourceLanguage === "singlish") {
       inputPara = romanToSinhalaConvert(inputText);
@@ -35,7 +51,12 @@ function TranslatePage() {
       const translation = await TranslationService.translateText(inputPara);
       setTranslatedText(translation);
     } catch (error) {
-      console.log(error);
+      setRequestError(
+        "An error occurred while translating. Please try again later."
+      );
+      console.error(error);
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -67,8 +88,29 @@ function TranslatePage() {
               onChange={handleInputChange}
               variant="outlined"
               rows={4}
-              style={{ marginBottom: "16px" }}
+              style={{ marginBottom: "16px", marginTop: "6px" }}
+              required
+              error={validationError !== null}
+              helperText={validationError}
             />
+            {sourceLanguage === "singlish" && (
+              <div className="mt-2">
+                <Typography variant="body1">
+                  Converted Text (Roman to Sinhala):
+                </Typography>
+                <TextField
+                  multiline
+                  fullWidth
+                  value={romanToSinhalaConvert(inputText)}
+                  variant="outlined"
+                  InputProps={{
+                    readOnly: true,
+                  }}
+                  rows={2}
+                  style={{ marginTop: "8px" }}
+                />
+              </div>
+            )}
             <Grid
               container
               spacing={4}
@@ -76,9 +118,9 @@ function TranslatePage() {
               justifyContent="flex-end"
             >
               <Grid item xs={4} style={{ textAlign: "right" }}>
-                <span>input language</span>
+                <Typography variant="body1">Input Language</Typography>
               </Grid>
-              <Grid item xs={4}>
+              <Grid item xs={4} style={{ marginTop: "16px" }}>
                 <Select
                   label="Source Language"
                   fullWidth
@@ -90,14 +132,15 @@ function TranslatePage() {
                   <MenuItem value="sinhala">Sinhala</MenuItem>
                 </Select>
               </Grid>
-              <Grid item xs={4}>
+              <Grid item xs={4} style={{ marginTop: "16px" }}>
                 <Button
                   variant="contained"
                   color="primary"
                   onClick={translateText}
                   size="small"
+                  disabled={isLoading}
                 >
-                  Translate
+                  {isLoading ? "Translating..." : "Translate"}
                 </Button>
               </Grid>
             </Grid>
@@ -108,14 +151,25 @@ function TranslatePage() {
                 fullWidth
                 value={translatedText}
                 variant="outlined"
-                disabled
+                InputProps={{
+                  readOnly: true,
+                }}
                 rows={4}
                 style={{ marginTop: "16px" }}
               />
+              {requestError && (
+                <Alert
+                  severity="error"
+                  style={{ marginBottom: "15px", marginTop: "18px" }}
+                >
+                  {requestError}
+                </Alert>
+              )}
+
               <IconButton
                 aria-label="Copy"
                 onClick={handleCopy}
-                disabled={!translatedText}
+                disabled={!translatedText || isLoading}
                 style={{ marginTop: "8px" }}
               >
                 <FileCopyIcon />
