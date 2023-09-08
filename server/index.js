@@ -1,10 +1,11 @@
 const express = require("express");
 const translate = require("google-translate-api-x");
+const bodyParser = require("body-parser");
 
 const app = express();
 const port = 5001;
 
-app.use(express.json());
+app.use(bodyParser.json());
 
 app.post("/translate", async (req, res) => {
   const { text } = req.body;

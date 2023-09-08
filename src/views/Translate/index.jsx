@@ -12,7 +12,7 @@ import {
 } from "@mui/material";
 import { useState } from "react";
 import TranslationService from "services/TranslationService";
-import { romanToSinhalaConvert } from "services/romanToSInhalaConvert";
+import Singlish from "services/singlish";
 
 function TranslatePage() {
   const [sourceLanguage, setSourceLanguage] = useState("singlish");
@@ -21,6 +21,7 @@ function TranslatePage() {
   const [isLoading, setIsLoading] = useState(false);
   const [validationError, setValidationError] = useState(null);
   const [requestError, setRequestError] = useState(null);
+  const singlish = new Singlish();
 
   const handleLanguageChange = (event) => {
     setSourceLanguage(event.target.value);
@@ -44,7 +45,7 @@ function TranslatePage() {
 
     let inputPara = inputText;
     if (sourceLanguage === "singlish") {
-      inputPara = romanToSinhalaConvert(inputText);
+      inputPara = singlish.parse(inputText);
     }
 
     try {
@@ -101,7 +102,7 @@ function TranslatePage() {
                 <TextField
                   multiline
                   fullWidth
-                  value={romanToSinhalaConvert(inputText)}
+                  value={singlish.parse(inputText)}
                   variant="outlined"
                   InputProps={{
                     readOnly: true,
