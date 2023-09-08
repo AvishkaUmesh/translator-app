@@ -11,7 +11,7 @@ const DictionaryPage = () => {
 
   const handleApiCall = async () => {
     try {
-      const response = await fetch('/httpRequest', {
+      const response = await fetch('/dictionary', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -22,7 +22,7 @@ app.post("/translate", async (req, res) => {
 });
 
 
-app.post("/httpRequest", async (req, res) => {
+app.post("/dictionary", async (req, res) => {
   try {
     // Extract the user input from the request body
     const { word } = req.body;
