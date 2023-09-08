@@ -13,14 +13,5 @@ const routes = [
     icon: <MdHome className="h-6 w-6" />,
     component: <TranslatePage />,
   },
-
-
-
-
-
-
-
-
-
 ];
 export default routes;
