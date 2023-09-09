@@ -28,6 +28,7 @@
     "react-router-dom": "^6.4.0",
     "react-scripts": "5.0.1",
     "react-table": "^7.8.0",
+    "sinhala-unicode-coverter": "^1.0.2",
     "tailwindcss-rtl": "^0.9.0",
     "web-vitals": "^2.1.4"
   },
@@ -58,6 +59,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.8",
+    "daisyui": "^3.7.3",
     "postcss": "^8.4.16",
     "prettier": "^2.8.3",
     "prettier-plugin-tailwindcss": "^0.2.1",
