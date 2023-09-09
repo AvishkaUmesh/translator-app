@@ -32,7 +32,7 @@ app.post("/dictionary", async (req, res) => {
       return res.status(400).json({ error: "Word not provided in the request" });
     }
 
-    // Now, use the user-provided 'word' in the Madura API query
+    //  use the user-provided 'word' in the Madura API query
     const result = await maduraAPI.query(word);
 
     console.log(result);
