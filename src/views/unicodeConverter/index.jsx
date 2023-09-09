@@ -74,7 +74,7 @@ function TextConverter() {
   return (
     <div>
       <div className="mt-8 rounded-2xl bg-white p-8">
-        <h1>Sinhala Text Converter</h1>
+        <h1 className="text-xl">Sinhala Text Converter</h1>
       </div>
       <div className="mt-4 w-full rounded-2xl bg-white p-8" data-aos="fade-up"
               data-aos-anchor-placement="top-bottom"
@@ -156,7 +156,10 @@ function TextConverter() {
           </div>
         </div>
 
-       
+        
+ 
+
+
       </div>
       <div className="mt-4 rounded-2xl bg-white p-8 hidden" id="my_modal_1">
       <div className="alert alert-success " >
