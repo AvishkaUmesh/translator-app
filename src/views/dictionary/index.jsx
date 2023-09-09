@@ -1,9 +1,11 @@
+// 
 import React, { useState } from 'react';
 import './DictionaryPage.css'; // Import your custom CSS for styling
 
 const DictionaryPage = () => {
   const [inputText, setInputText] = useState('');
   const [result, setResult] = useState('');
+  const [error, setError] = useState(null);
 
   const handleInputChange = (e) => {
     setInputText(e.target.value);
@@ -25,17 +27,18 @@ const DictionaryPage = () => {
         // Join meanings into a string
         const meaningsString = meanings.join(', ');
         setResult(meaningsString);
+        setError(null); // Clear any previous errors
       } else {
-        setResult('API query failed');
+        const errorData = await response.json();
+        setError(errorData.message || 'API query failed');
       }
     } catch (error) {
       console.error(error);
-      setResult('API query failed');
+      setError('API query failed');
     }
   };
 
   return (
-    
     <div className="bg-purple-500 min-h-screen p-4">
       <h1 className="text-2xl text-white mb-4">Sinhala-English Switch Dictionary</h1>
       <div className="bg-white rounded-lg p-4">
@@ -56,7 +59,11 @@ const DictionaryPage = () => {
       <div className="mt-4">
         <h2 className="text-lg text-white mb-2">Result:</h2>
         <div className="bg-white rounded-lg p-4">
-          <p className="text-gray-800">{result}</p>
+          {error ? (
+            <p className="text-red-600">{error}</p>
+          ) : (
+            <p className="text-gray-800">{result}</p>
+          )}
         </div>
       </div>
     </div>
