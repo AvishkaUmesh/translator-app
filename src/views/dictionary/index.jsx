@@ -1,7 +1,7 @@
 // 
 import React, { useState } from 'react';
 import './DictionaryPage.css'; 
-
+import { Copy } from 'lucide-react';
 const DictionaryPage = () => {
   const [inputText, setInputText] = useState('');
   const [result, setResult] = useState('');
@@ -56,7 +56,7 @@ const DictionaryPage = () => {
   return (
     <div className="">
       <div className="mt-8 rounded-2xl bg-white p-8">
-      <h1 className="text-xl">Sinhala-English Switch Dictionary</h1>
+      <h1 className="text-xl font-bold text-navy-700">Sinhala-English Switch Dictionary</h1>
       </div>
 
       <h1 className="text-2xl text-white mb-4"></h1>
