@@ -54,8 +54,12 @@ const DictionaryPage = () => {
   };
 
   return (
-    <div className="bg-purple-500 min-h-screen p-4">
-      <h1 className="text-2xl text-white mb-4">Sinhala-English Switch Dictionary</h1>
+    <div className="">
+      <div className="mt-8 rounded-2xl bg-white p-8">
+      <h1 className="text-xl">Sinhala-English Switch Dictionary</h1>
+      </div>
+
+      <h1 className="text-2xl text-white mb-4"></h1>
       <div className="bg-white rounded-lg p-4">
         <input
           type="text"
@@ -71,10 +75,13 @@ const DictionaryPage = () => {
         >
           {isLoading ? 'Searching...' : 'Search'}
         </button>
+
       </div>
-      <div className="mt-4">
-        <h2 className="text-lg text-white mb-2">Result:</h2>
-        <div className="bg-white rounded-lg p-4">
+      <div className="mt-4 bg-white rounded-lg p-4">
+
+        <h2 className="text-lg mb-2">Result:</h2>
+
+        <div className=" min-h-[250px] w-full border rounded-xl p-2">
           {error ? (
             <p className="text-red-600">{error}</p>
           ) : (
