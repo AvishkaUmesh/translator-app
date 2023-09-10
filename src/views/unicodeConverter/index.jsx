@@ -121,7 +121,7 @@ function TextConverter() {
               </label>
               <textarea
               
-                class="textarea textarea-bordered textarea-primary min-h-[250px] w-full rounded-xl"
+                class="textarea textarea-bordered textarea-primary text-xl min-h-[250px] w-full rounded-xl"
                 placeholder="Enter your text here"
                 value={inputText}
                 onChange={(e) => setInputText(e.target.value)}
@@ -137,8 +137,7 @@ function TextConverter() {
                 {/* <span className="label-text-alt">Alt label</span> */}
               </label>
               <textarea
-              
-                class="textarea textarea-bordered  min-h-[250px] w-full rounded-xl"
+                class="textarea textarea-bordered text-xl min-h-[250px] w-full rounded-xl"
                 placeholder="Converted text will appear here"
                 value={outputText}
                 readOnly

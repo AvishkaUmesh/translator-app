@@ -1,7 +1,7 @@
 // 
 import React, { useState } from 'react';
 import './DictionaryPage.css'; 
-import { Copy } from 'lucide-react';
+
 const DictionaryPage = () => {
   const [inputText, setInputText] = useState('');
   const [result, setResult] = useState('');
