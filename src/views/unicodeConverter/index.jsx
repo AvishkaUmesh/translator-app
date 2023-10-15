@@ -96,6 +96,7 @@ function TextConverter() {
               <option value="thibusToUnicode">Thibus to Unicode</option>
             </optgroup>
             <optgroup label="Unicode to Legacy">
+              <option value="unicodeToDlManel">Unicode to Astro11</option>
               <option value="unicodeToDlManel">Unicode to DL-Manel</option>
               <option value="unicodeToKaputa">Unicode to Kaputa</option>
             </optgroup>
