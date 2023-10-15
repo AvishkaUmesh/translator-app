@@ -75,7 +75,7 @@ function TranslatePage() {
           style={{ padding: "16px" }}
         >
           <header className="relative flex items-center justify-between pt-4">
-            <div className="text-xl font-bold text-navy-700 dark:text-white">
+            <div className="text-xl font-bold text-navy-700">
               Sinhala to English
             </div>
           </header>
